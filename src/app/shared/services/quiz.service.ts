@@ -50,4 +50,11 @@ export class QuizService {
       }
     });
   }
+
+  resetQuiz() {
+    this.quizContent = [];
+    this.playerAnswers = [];
+    this.score = 0;
+    this.isQuizFinished = false;
+  }
 }
