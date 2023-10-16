@@ -11,7 +11,9 @@ import { provideHttpClient } from "@angular/common/http";
 import { ResultComponent } from './quiz/result/result.component';
 import { QuestionComponent } from './quiz/question/question.component';
 import { AnswerComponent } from './quiz/answer/answer.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RegisterComponent } from './auth/register/register.component';
+import { LoginComponent } from './auth/login/login.component';
 
 @NgModule({
   declarations: [
@@ -23,11 +25,14 @@ import { FormsModule } from '@angular/forms';
     ResultComponent,
     QuestionComponent,
     AnswerComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [provideHttpClient()],
   bootstrap: [AppComponent]

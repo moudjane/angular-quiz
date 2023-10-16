@@ -482,6 +482,17 @@
       "answerLabel": "Lazy loading in Angular is a technique for defining routes.",
       "isCorrect": false
     }
+  ],
+  "users": [
+    {
+      "id": "1199e",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "id": "b99e",
+      "username": "toto",
+      "password": "toto"
+    }
   ]
 }
-

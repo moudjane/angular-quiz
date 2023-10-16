@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
+import { AuthService } from "../auth/auth.service";
 
 @Component({
   selector: 'app-home',
@@ -7,10 +8,17 @@ import { Router } from "@angular/router";
   styleUrls: ['./home.component.scss'],
   standalone: false
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
   playerName = '';
+  isPlayerNameConfirmed = false;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private authService: AuthService) { }
+
+  ngOnInit(): void {
+    //Nous verrons plus tard comment gérer cela avec des observables
+    this.authService.isUserConnected();
+    this.playerName = this.authService.user?.username || '';
+  }
 
   get isPlayerNameFill() {
     return this.playerName.length < 1;
@@ -18,5 +26,9 @@ export class HomeComponent {
 
   navigateToQuiz() {
     this.router.navigate(['/quiz', this.playerName]);
+  }
+
+  confirmPseudo() {
+    this.isPlayerNameConfirmed = true;
   }
 }
