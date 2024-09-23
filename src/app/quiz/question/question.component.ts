@@ -14,4 +14,8 @@ export class QuestionComponent implements OnInit {
   ngOnInit(): void {
     this.quizService.getQuizContent();
   }
+
+  addAnswer(answer: string, questionId: number) {
+    this.quizService.addAnswer(answer, questionId);
+  }
 }

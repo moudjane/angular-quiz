@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { QuizService } from "../../shared/services/quiz.service";
 
 @Component({
@@ -9,6 +9,7 @@ import { QuizService } from "../../shared/services/quiz.service";
 export class AnswerComponent {
   @Input() answers: any[] = [];
   @Input() questionId: number = 0;
+  @Output() answerSelected = new EventEmitter();
   isQuizFinished = this.quizService.isQuizFinished;
 
   constructor(private quizService: QuizService) { }
@@ -17,8 +18,8 @@ export class AnswerComponent {
     return String.fromCharCode(65 + j);
   }
 
-  addAnswer(answer: string, questionId: number) {
-    this.quizService.addAnswer(answer, questionId);
+  addAnswer(answer: string) {
+    this.answerSelected.emit(answer);
   }
 
   isAnswerSelected(answer: string, id: number) {
