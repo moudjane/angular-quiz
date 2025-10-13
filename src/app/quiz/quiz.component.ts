@@ -4,7 +4,8 @@ import { QuizService } from "../shared/services/quiz.service";
 @Component({
   selector: 'app-quiz',
   templateUrl: './quiz.component.html',
-  styleUrls: ['./quiz.component.scss']
+  styleUrls: ['./quiz.component.scss'],
+  standalone: false
 })
 export class QuizComponent {
   quizContent = this.quizService.quizContent;
