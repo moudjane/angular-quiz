@@ -43,10 +43,11 @@ export class RegisterComponent implements OnInit {
 
   private checkUsernamePassword(formGroup: FormGroup) {
     const username = formGroup.get('username')?.value;
-    const password = formGroup.get('password')?.value;
-    if (!username || !password) return null;
-    if (password.includes(username)) {
-      password.setErrors({ usernamePassword: true });
+    const passwordValue = formGroup.get('password')?.value;
+    const passwordControl = formGroup.get('password');
+    if (!username || !passwordValue) return null;
+    if (passwordValue.includes(username)) {
+      passwordControl?.setErrors({ usernamePassword: true });
       return { usernamePassword: true };
     }
     return null;
