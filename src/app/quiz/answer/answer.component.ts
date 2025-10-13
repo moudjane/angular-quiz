@@ -4,7 +4,8 @@ import { QuizService } from "../../shared/services/quiz.service";
 @Component({
   selector: 'app-answer',
   templateUrl: './answer.component.html',
-  styleUrls: ['./answer.component.scss']
+  styleUrls: ['./answer.component.scss'],
+  standalone: false
 })
 export class AnswerComponent {
   @Input() answers: any[] = [];
