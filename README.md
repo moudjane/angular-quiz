@@ -1,6 +1,12 @@
 # AngularQuiz
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.7.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 19.2.17.
+
+## Migration History
+- **Angular 16.1.7** → **Angular 19.2.17** (Migration completed successfully)
+- **TypeScript**: 5.8.3 (compatible with Angular 19)
+- **RxJS**: 7.8.2
+- **Zone.js**: 0.15.1
 
 ## Development server
 
