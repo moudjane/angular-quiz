@@ -1,0 +1,39 @@
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.categories {
+  @apply flex flex-col items-center justify-center;
+
+  &_title {
+    @apply text-xl font-bold text-center mb-4;
+  }
+
+  &_presentation {
+    @apply text-center;
+  }
+
+  &_name {
+    @apply mb-4 text-violet-500 font-bold;
+  }
+
+  &_search {
+    @apply p-2 border border-gray-300 rounded-md w-64;
+  }
+
+  &_btn-search {
+    @apply ml-2 p-2 bg-blue-500 text-white rounded-md hover:bg-blue-600;
+  }
+
+  &_btn-reset {
+    @apply ml-2 p-2 bg-gray-500 text-white rounded-md hover:bg-gray-600;
+  }
+
+  &_quiz-btn {
+    @apply my-8
+  }
+}
+

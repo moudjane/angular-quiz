@@ -1,0 +1,7 @@
+<div class="card">
+		<h3>{{ category?.name }}</h3>
+		<p>{{ (category?.questions?.length || 0) }} question(s)</p>
+		<a [routerLink]="['/quiz', playerName || 'anonymous', category?.id]">
+			<button type="button">Lancer le QCM</button>
+		</a>
+</div>

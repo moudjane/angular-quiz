@@ -1,0 +1,16 @@
+<div class="categories_page">
+	<h2 class="categories_title">Catégories</h2>
+  <p class="categories_presentation">Ce quiz a pour but éducatif</p>
+
+	<p class="categories_name" *ngIf="playerName"><strong>{{ playerName }}</strong></p>
+
+	<form #f="ngForm" (ngSubmit)="onSearch()" class="search-form">
+		<input class="categories_search" name="search" [(ngModel)]="searchText" placeholder="Rechercher une catégorie" />
+		<button class="categories_btn-search" type="button" (click)="onSearch()">Rechercher</button>
+		<button  class="categories_btn-reset" type="button" (click)="resetFilter()">Réinitialiser</button>
+	</form>
+
+  <div class="cards-grid">
+    <app-card *ngFor="let cat of filtered" [category]="cat" [playerName]="playerName" (startQuiz)="onStartQuiz(cat.id)"></app-card>
+  </div>
+</div>
